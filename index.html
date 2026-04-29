@@ -384,11 +384,13 @@
     .stat-card:hover::before { height: 100%; }
     .stat-num {
       font-family: var(--ff-serif);
-      font-size: 2.8rem;
+      font-size: clamp(1.3rem, 4.5vw, 2.8rem);
       font-weight: 300;
       color: var(--clr-accent);
       line-height: 1;
       margin-bottom: .4rem;
+      word-break: break-word;
+      
     }
     .stat-label {
       font-family: var(--ff-mono);
@@ -659,10 +661,10 @@
     .back-top:hover { color: var(--clr-accent); border-color: var(--clr-accent); }
 
     /* ===== RESPONSIVE ===== */
+    .hero-avatar-mobile { display: none; }
     @media (max-width: 900px) {
+      .hero-avatar-mobile { display: block; margin-bottom: 2.5rem; }
       .hero-avatar-wrap { display: none; }
-      .about-grid { grid-template-columns: 1fr; }
-      .contact-wrap { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -759,7 +761,12 @@
       </div>
     </div>
   </div>
-
+<!-- Mobile photo -->
+<div class="hero-avatar-mobile" style="text-align:center;">
+  <img src="assets/pfp1.jpg" alt="Nawfat Nahin"
+       style="width:150px;height:150px;border-radius:50%;object-fit:cover;
+              border:1px solid #1e2d3d;margin:0 auto;" />
+</div>
   <!-- Hero content -->
   <div class="hero-coord reveal">
     <!-- EDIT: Your approximate coordinates for flavor -->
